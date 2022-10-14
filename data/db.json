@@ -1,0 +1,30 @@
+
+{
+    "students": [
+        {
+            "id": 1,
+            "name":"Eddie Gingco",
+            "department": "CAST",
+            "year_level": "4"
+    
+        },
+        {
+            "id": 2,
+            "name":"Eds Gins",
+            "department": "CCJ",
+            "year_level": "3"
+        },
+        {
+            "id": 3,
+            "name":"Edd Gin",
+            "department": "CON",
+            "year_level": "2"
+        },
+        {
+            "id": 4,
+            "name":"Eddy Gings",
+            "department": "BSBM",
+            "year_level": "1"
+        }
+    ]
+  }
