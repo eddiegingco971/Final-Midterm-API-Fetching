@@ -31,14 +31,19 @@ const Students = () => {
 
     return ( 
         <div className="students">
-            <div className="card bg-success">
+            <div className="card bg-light" style={{
+                    height:"71vh"
+                }}>
                 <div className="card-header bg-dark text-light">
                     <div className="card-title">
                         <h3>List of Students</h3>
                     </div>
                 </div>
-                <div className="card-body bg-light">
-                <table className="table table-striped">
+                <div className="card-body bg-light" style={{
+                    height:"40vh",
+                    overflow:"auto",
+                }}>
+                <table className="table table-striped" >
                     <thead>
                     <tr className="bg-primary">
                         <th scope="col">Fullname</th>
@@ -87,38 +92,3 @@ export default Students;
 
 
 // npx json-server --watch data/db.json --port 8000
-
-
-{/* { students && students.map((students) => {
-            
-            return(
-                <div className="card">
-                        <div className="card-header bg-light">
-                            <div className="card-title">
-                                <h1>Student Information</h1>
-
-                            </div>
-                        </div>
-                    <div className="card-body bg-light">
-                        <table className="table">
-                                <thead  className="table table-striped bg-info">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Department</th>
-                                        <th>Year Level</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{students.id}</td>
-                                        <td>{students.name}</td>
-                                        <td>{students.department}</td>
-                                        <td>{students.year_level}</td>
-                                    </tr>
-                                </tbody>
-                        </table>
-                    </div>
-                </div>
-                )
-            })} */}

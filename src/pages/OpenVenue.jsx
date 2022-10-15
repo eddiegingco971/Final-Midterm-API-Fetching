@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 const OpenVenue = () => {
   const { id } = useParams();
   const [venue, setVenue] = useState([]);
-  const [schedule, setSchedule] = useState({});
+  const [schedule, setSchedule] = useState([]);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
   
@@ -35,14 +35,19 @@ const OpenVenue = () => {
   return (
     <div className="openvenue">
         
-    <div className="card bg-light">
-        <div className="card-header">
-          <h3 className="text-center m-4">
-            {schedule ? "Scheduled on" : "No Schedule Found In This Building"}
+    <div className="card bg-light" style={{
+                    height:"71vh"
+                }}>
+        <div className="card-header bg-dark">
+          <h3 className="text-center m-1 text-light">
+            {schedule ? "S C H E D U L E": "No Schedule Found In This Building"}
             <div className="mt-3 text-success">{venue.building}</div>
           </h3>
         </div>
-        <div className="card-body">
+        <div className="card-body" style={{
+                    height:"41vh",
+                    overflow:"auto",
+                }}>
           <table className="table table-striped">
             <thead className="bg-primary">
               <tr>
@@ -84,9 +89,11 @@ const OpenVenue = () => {
             }
 
           </div>
+          <div className="card-footer">
           <Link to="/venues" className="btn btn-danger">
             Back
           </Link>
+          </div>
         </div>
       
     </div>

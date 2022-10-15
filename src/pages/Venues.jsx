@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Venues = () => {
-    const [data, setData] = useState({});
+    const [data, setData] = useState([]);
     const navigate = useNavigate();
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
@@ -43,7 +43,10 @@ const Venues = () => {
                 </div>
 
                
-                <div className="card-body">
+                <div className="card-body" style={{
+                    height:"50vh",
+                    overflow:"auto"
+                }}>
                 <table className="table table-striped">
                     <thead  className="bg-primary">
                     <tr>
