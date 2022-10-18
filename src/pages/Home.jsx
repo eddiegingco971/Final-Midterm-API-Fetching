@@ -4,7 +4,7 @@ const Home = () => {
    
        return(
         <div className="home">
-            <div className="col-md-8 offset-md-2">
+            <div className="col-md-10 offset-md-1">
                 <div className="card bg-light" style={{
                     height:"71vh"
                 }}>

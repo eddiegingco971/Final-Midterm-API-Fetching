@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Venues = () => {
-    const [data, setData] = useState([]);
+    const [venues, setVenues] = useState([]);
     const navigate = useNavigate();
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
@@ -17,21 +17,21 @@ const Venues = () => {
                 return res.json()
         })
             .then((data) => {
-                const { venues } = data;
-                setData(venues);
+                // const { venues } = data;
+                setVenues(data.venues);
                 setIsPending(false);
                 setError(null);
             })
             .catch(err => {
                 setIsPending(false);
                 setError(err.message);
-                setData(false);
+                setVenues(false);
             })
         },1000)
     }, []);
 
-    const handleOpenVenue = (venue) => {
-        navigate(`/venues/${venue}`);
+    const handleOpenVenue = (id) => {
+        navigate(`/venues/${id}`);
       };
      
     return ( 
@@ -42,11 +42,12 @@ const Venues = () => {
                     <h1>Venues</h1>
                 </div>
 
-               
-                <div className="card-body" style={{
+                {/* <div className="card-body" style={{
                     height:"50vh",
                     overflow:"auto"
-                }}>
+                }}> */}
+
+                <div className="card-body">
                 <table className="table table-striped">
                     <thead  className="bg-primary">
                     <tr>
@@ -59,15 +60,15 @@ const Venues = () => {
                     </thead>
                     <tbody>
 
-                    {Object.keys(data)?.map((venue, index) => {
+                    {venues && venues.map((venue) => {
                         return (
-                        <tr key={index}>
-                            <td>{data[venue].id}</td>
-                            <td>{data[venue].name}</td>
-                            <td>{data[venue].building}</td>
-                            <td>{data[venue].capacity}</td>
+                        <tr>
+                            <td>{venue.id}</td>
+                            <td>{venue.name}</td>
+                            <td>{venue.building}</td>
+                            <td>{venue.capacity}</td>
                             <td><a className="btn btn-primary" onClick={() => {
-                                handleOpenVenue(data[venue].id);}}>
+                                handleOpenVenue(venue.id);}}>
                                 Open Schedule</a></td>
                                 
                         </tr>

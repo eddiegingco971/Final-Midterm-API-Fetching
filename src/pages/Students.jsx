@@ -62,8 +62,9 @@ const Students = () => {
                             <td>{students.year_level}</td>
                             <td>
                             <button
-                                className="btn btn-sm bg-success m-1 text-white"
-                                onClick={() => handleSched(students.id)}>
+                                className="btn btn-sm bg-success m-1 text-white" 
+                                onClick={() => 
+                                handleSched(students.id)}>
                                 Open<i className="fa-solid fa-folder"></i>
                             </button>
                             </td>
