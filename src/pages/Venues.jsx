@@ -42,11 +42,11 @@ const Venues = () => {
                     <h1>Venues</h1>
                 </div>
 
-               
-                <div className="card-body" style={{
+                {/* <div className="card-body" style={{
                     height:"50vh",
                     overflow:"auto"
-                }}>
+                }}> */}
+                <div className="card-body">
                 <table className="table table-striped">
                     <thead  className="bg-primary">
                     <tr>
